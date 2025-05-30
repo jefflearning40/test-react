@@ -1,14 +1,33 @@
+import {useState} from "react"
 
+function App(){
 
-function App() {
-let [count, setCount] = useState(0)
-const i=() =>{
+  const [count,setCount]=useState(0)
 
-}
-return <>
+    const increment= () => {
+      if (count<10){
+    setCount(count +1)
+  }
+  }
 
- <p>Compteur :{count}</p>
- <button onClick={i}>Incrementer</button>
+  const decrement= ()=> {
+    if (count>0){
+    setCount(count-1)
+  }
+  }
+
+  const raz= () => {
+   setCount(0)
+    
+  }
+  
+  return <>
+
+<p>Compteur :{count}</p>
+<button onClick={increment}>Incrementer</button>
+<button onClick={decrement}>decrementer</button>
+<button onClick={raz}>RAZ</button>
   </>
+
 }
 export default App
