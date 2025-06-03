@@ -1,20 +1,13 @@
-
-
-import Footer from "./footer";
-import Header from "./header";
-import Main1 from "./main1";
-import WelcomeMessage from "./welcomeMessage";
-
-
-
-export default function App(){
-    return(
-        <div>
-            <WelcomeMessage />
-            <Header />
-            <Main1/>
-            <Footer />
-               
-            </div>
-    );
+import React, { Fragment } from 'react';
+const Title='Bonjour'
+const Para="Tout le monde"
+function App() {
+  return (
+    <Fragment>
+      <h1 id="Title" className="title">{Title}</h1>
+      <p>{Para}</p>
+    </Fragment>
+  );
 }
+
+export default App;
