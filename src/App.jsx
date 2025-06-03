@@ -1,13 +1,18 @@
-import React, { Fragment } from 'react';
-const Title='Bonjour'
-const Para="Tout le monde"
-function App() {
-  return (
-    <Fragment>
-      <h1 id="Title" className="title">{Title}</h1>
-      <p>{Para}</p>
-    </Fragment>
-  );
-}
+import Article from "./Article";
+import Footer from "./footer";
+import Header from "./header";
+import Main1 from "./main1";
 
-export default App;
+
+export default function App() {
+    return (
+        <div>
+            <Header />
+            <Main1 />
+            <Article title="comprendre les Hooks" author="Alice" />
+            <Article title="VSX VS HTML" author="Bob" />
+            <Article title="Use clearly the props" author="Charlie" />
+            <Footer />
+        </div> 
+    )
+}
