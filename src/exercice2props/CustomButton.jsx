@@ -4,8 +4,11 @@ export default function CustomButton(props){
        
         <button style={{
             color : props.color,
-            background :props.background
-        }}>color</button>       
+            background :props.background,
+            border :props.border,
+            margin:props.margin,
+            borderRadius:"5px"
+            }}>{props.text}</button>       
         
         
         
