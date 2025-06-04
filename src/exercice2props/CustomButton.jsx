@@ -2,7 +2,10 @@ export default function CustomButton(props){
 
     return (
        
-        <button>color</button>       
+        <button style={{
+            color : props.color,
+            background :props.background
+        }}>color</button>       
         
         
         
