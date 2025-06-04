@@ -5,8 +5,10 @@ import ProductTitle from "./ProductTitle";
 
 export default function Product(){
 return (
-    <ProductTitle/>,
-    <ProductDesciption/>,
+    <>
+   <ProductTitle/>
+   <ProductDesciption/>
     <BuyButton/>
+    </>
 );
 }
