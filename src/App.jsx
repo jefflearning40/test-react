@@ -1,14 +1,20 @@
-import CustomButton from "./exercice2props/CustomButton";
+import TaskItem from './exo3/TaskItem';
 
-export default function App(){
-    return(
-        <>
-       <CustomButton border="10px" color="red" background="black" text="Hello !" />
+const App = () => {
+  const tasks = [
+    { id: 1, title: 'Faire le ménage', valueCheckBox: true },
+    { id: 2, title: 'Cuisiner délicieux', valueCheckBox: false },
+    { id: 3, title: 'Se reposer', valueCheckBox: false }
+  ];
 
-        <CustomButton border="10px" color="blue" background="yellow" text="Hello !" />
+  return (
+    <div>
+      <h1>Liste des tâches</h1>
+      {tasks.map(task => (
+        <TaskItem key={task.id} task={task} />
+      ))}
+    </div>
+  );
+};
 
-         <CustomButton border="10px" margin="10px" color="purple" background="white" text="Hello !" />
-        </>
-    )
-    
-}
+export default App;
