@@ -1,8 +1,10 @@
-import Exostyle from "./exostyle1/ColorButton";
+import ColorButton from "./exostyle1/ColorButton";
+import './exostyle1/style.css'
 
 
 export default function App(){
   return(
-   <Exostyle/>
+   <ColorButton color="yellow" background="red" 
+   text="Ze Bouton !"/>
   )
 }

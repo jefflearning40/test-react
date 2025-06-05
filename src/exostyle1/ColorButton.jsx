@@ -1,8 +1,9 @@
 export default function ColorButton(props){
     return(
-        
         <div>
-        <p>exostyle1</p>
+       <button className="primary-btn">{props.text}
+        </button>       
+       
         </div>
     )
 }
