@@ -2,9 +2,9 @@ import TaskItem from './exo3/TaskItem';
 
 const App = () => {
   const tasks = [
-    { id: 1, title: 'Faire le ménage', valueCheckBox: true },
-    { id: 2, title: 'Cuisiner délicieux', valueCheckBox: false },
-    { id: 3, title: 'Se reposer', valueCheckBox: false }
+    { id: 1, title: 'Faire le ménage' },
+    { id: 2, title: 'Cuisiner délicieux' },
+    { id: 3, title: 'Se reposer' }
   ];
 
   return (
