@@ -1,0 +1,23 @@
+.message {
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.message-info {
+  background-color: #e7f3fe;
+  color: #31708f;
+}
+
+.message-alert {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.message-success {
+  background-color: #d4edda;
+  color: #155724;
+}  
+
+

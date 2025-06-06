@@ -1,10 +1,12 @@
-import ColorButton from "./exostyle1/ColorButton";
-import './exostyle1/style.css'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import Message from "./Message";
 
-
-export default function App(){
-  return(
-   <ColorButton color="yellow" background="red" 
-   text="Ze Bouton !"/>
-  )
-}
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+  <div>
+    <Message text="Information système" type="info" />
+    <Message text="Alerte de sécurité" type="alert" />
+    <Message text="Connexion réussie" type="success" />
+  </div>
+);
