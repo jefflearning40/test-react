@@ -17,11 +17,11 @@ const reset=() =>{
 }
 
 return <>
-<p>compteur :{count}</p>
+<p>Temperature :{count} degré</p>
  <div className="button-container">
-<button onClick={increment}>Incremente</button>
-<button onClick={decrement}>Decremente</button>
-<button onClick={reset}>Reset</button>
+<button className="plus" onClick={increment}>Chaud</button>
+<button className="moins" onClick={decrement}>Froid</button>
+<button className="raz" onClick={reset}>Fermer</button>
 </div>
 </>
 }

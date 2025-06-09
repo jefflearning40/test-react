@@ -5,4 +5,16 @@
 }
 button{
     padding: 10px 20px;
+    
+}
+.plus{
+    background-color: red;
+}
+.moins{
+    background-color: blue;
+}
+.raz{
+background-color: black;
+color: white;
+
 }
