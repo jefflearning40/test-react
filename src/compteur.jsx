@@ -10,19 +10,19 @@ function Compteur() {
   const [isExePressed, setIsExePressed] = useState(false);
 
   const incrementWater = () => {
-    setTargetWater(prevWater => Math.min(prevWater + 0.1, 100));
+    setTargetWater(prevWater => Math.min(prevWater + 1, 100));
   };
 
   const decrementWater = () => {
-    setTargetWater(prevWater => Math.max(prevWater - 0.1, 0));
+    setTargetWater(prevWater => Math.max(prevWater - 1, 0));
   };
 
   const incrementTemp = () => {
-    setTargetCount(targetCount + 1);
+    setTargetCount(prevCount => prevCount + 1);
   };
 
   const decrementTemp = () => {
-    setTargetCount(targetCount - 1);
+    setTargetCount(prevCount => prevCount - 1);
   };
 
   const reset = () => {
@@ -53,11 +53,18 @@ function Compteur() {
 
   const handleMouseDown = () => {
     incrementWater();
-    waterInterval.current = setInterval(incrementWater, 200); // Ralentir l'incrémentation
+    waterInterval.current = setInterval(incrementWater, 100);
   };
 
   const handleMouseUp = () => {
     clearInterval(waterInterval.current);
+  };
+
+  const getTempColor = (temp) => {
+    if (temp < 20) return 'blue';
+    if (temp >= 20 && temp < 60) return 'lightblue';
+    if (temp >= 60 && temp < 80) return 'yellow';
+    return 'red';
   };
 
   useEffect(() => {
@@ -143,14 +150,29 @@ function Compteur() {
             Exe
           </button>
         </div>
-        <div className="glass-container">
-          <div className="graduation">
-            {[...Array(21)].map((_, i) => (
-              <div key={i} style={{ top: `${i * 5}%` }}></div>
-            ))}
+        <div className="glass-and-gauge-container">
+          <div className="glass-container">
+            <div className="graduation">
+              {[...Array(21)].map((_, i) => (
+                <div key={i} style={{ top: `${i * 5}%` }}></div>
+              ))}
+            </div>
+            <div className="glass">
+              <div className="water" style={{ height: `${water}%` }}></div>
+            </div>
           </div>
-          <div className="glass">
-            <div className="water" style={{ height: `${water}%` }}></div>
+          <div className="temp-gauge-container">
+            <div className="temp-gauge" style={{ height: `${(currentCount / 100) * 200}px`, backgroundColor: getTempColor(currentCount) }}></div>
+          </div>
+          <div className="indicators">
+            <div className="indicator-container">
+              <div className={`indicator resistor ${isExePressed && currentCount < targetCount ? 'on' : 'off'}`}></div>
+              <div className="indicator-label">Resistor</div>
+            </div>
+            <div className="indicator-container">
+              <div className={`indicator compressor ${isExePressed && currentCount > targetCount ? 'on' : 'off'}`}></div>
+              <div className="indicator-label">Compressor</div>
+            </div>
           </div>
         </div>
       </div>
