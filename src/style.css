@@ -1,20 +1,142 @@
-.button-container{
-    display:flex;
-    gap:10px;
-    margin-top:10px;
-}
-button{
-    padding: 10px 20px;
-    
-}
-.plus{
-    background-color: red;
-}
-.moins{
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .tap {
+    font-size: 50px;
+    margin-bottom: 10px;
+  }
+  
+  .main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .glass-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 140px;
+    height: 200px;
+  }
+  
+  .glass {
+    width: 100px;
+    height: 200px;
+    border: 2px solid black;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .water {
     background-color: blue;
-}
-.raz{
-background-color: black;
-color: white;
-
-}
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    transition: height 0.1s linear;
+  }
+  
+  .graduation {
+    position: absolute;
+    left: -30px;
+    width: 20px;
+    height: 200px;
+    pointer-events: none;
+  }
+  
+  .graduation div {
+    position: absolute;
+    width: 100%;
+    border-top: 1px solid black;
+    transform: translateY(-50%);
+  }
+  
+  .graduation div:nth-child(5n) {
+    width: 20px;
+  }
+  
+  .button-container {
+    display: flex;
+    gap: 10px;
+    margin-right: 20px;
+  }
+  
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  button {
+    padding: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    color: white;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+  
+  .water-btns, .temp-btns {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .water-display, .temp-display {
+    background-color: black;
+    color: green;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+  }
+  
+  .water-plus, .water-moins {
+    background-color: black;
+  }
+  
+  .plus {
+    background-color: red;
+  }
+  
+  .moins {
+    background-color: blue;
+  }
+  
+  .close {
+    background-color: #cccccc;
+    color: red;
+  }
+  
+  .open {
+    background-color: green;
+    color: white;
+  }
+  
+  .open:disabled {
+    background-color: #cccccc;
+  }
+  
+  .exe {
+    background-color: orange;
+    color: white;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 270px;
+    border-radius: 5px;
+  }
+  

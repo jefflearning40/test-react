@@ -1,6 +1,15 @@
+import React from 'react';
+import Compteur from "./compteur";
+
 
 function App() {
- return 'Hello world'
+  return (
+    <div>
+      <p>Ze Robinet</p>
+      <Compteur />
+     
+    </div>
+  );
 }
 
-export default App
+export default App;
