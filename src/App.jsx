@@ -1,13 +1,37 @@
-import React from "react";
-import ListeBouton from "./exo1";
-import ExoQuizz from "./exoquizz";
+import { useState } from "react";
+import ChuckButton from "./chuckButton";
+import Joke from "./Joke";
+import "./app.scss";
 
-export default function App() {
+const App = () => {
+  const [jokeData, setJokeData] = useState("");
 
-    return (
-        <div>
-            <ListeBouton/>
-            <ExoQuizz/>
-        </div>
-    );
-}
+  // --- Fonction qui récupère une blague
+  const fetchJoke = () => {
+    fetch("https://api.chucknorris.io/jokes/random")
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        }
+      })
+      .then((data) => {
+        setJokeData(data.value);
+      })
+      .catch((err) => console.error(err));
+  };
+
+  return (
+    <main>
+      <header>
+        <img
+          src="https://api.chucknorris.io/img/chucknorris_logo_coloured_small.png"
+          alt="CHUCK NORRIS"
+        />
+      </header>
+      <Joke jokeData={jokeData} />
+      <ChuckButton fetchJoke={fetchJoke} />
+    </main>
+  );
+};
+
+export default App;
