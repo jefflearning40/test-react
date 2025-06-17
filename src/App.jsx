@@ -1,6 +1,6 @@
 import { useState } from "react";
-import ChuckButton from "./chuckButton";
-import Joke from "./Joke";
+import ChuckButton from "./chucknorris/chuckButton";
+import Joke from "./chucknorris/joke";
 import "./app.scss";
 
 const App = () => {
